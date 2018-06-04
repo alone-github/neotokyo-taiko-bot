@@ -85,11 +85,11 @@ async def on_message(message):
         pass
         
     elif message.content.startswith('!all'):
-        status_dict(get_servers('NeotokyoSource'))
+        status = status_dict(get_servers('NeotokyoSource'))
         await client.send_message(message.channel, embed=embed(status, 'All Servers'))
         
     elif message.content.startswith('!active'):
-        status_dict(get_servers('NeotokyoSource'))
+        status = status_dict(get_servers('NeotokyoSource'))
         await client.send_message(message.channel, embed=embed(status, 'Active Servers'))
         
 @client.event
@@ -99,4 +99,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run('NDUzMDY4ODM1MzM2MjI0NzY4.DfbmsQ.w8dp8SOQsfrp9utRVHoKLHG8mHs')
+client.run('TOKEN')
